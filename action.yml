@@ -1,0 +1,32 @@
+name: DNSControl Action
+description: Maintain your DNS data with DNSControl and GitHub Actions
+author: Max Shaughnessy <mshaugh@hey.com>
+branding:
+  icon: globe
+  color: blue
+inputs:
+  args:
+    description: >
+      DNSControl command to run.
+      Usually one of `check`, `preview`, or `push`.
+    required: true
+  config_file:
+    description: >
+      Relative path under $GITHUB_WORKSPACE to the file containing your
+      DNS config in javascript DSL.
+    required: false
+    default: dnsconfig.js
+  creds_file:
+    description: >
+      Relative path under $GITHUB_WORKSPACE to the file containing your
+      provider credentials.
+    required: false
+    default: creds.json
+outputs:
+  output:
+    description: The output of the DNSControl command that was executed
+  preview_comment:
+    description: Filtered output to reduce 'preview' PR comment length
+runs:
+  using: docker
+  image: Dockerfile
