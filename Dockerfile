@@ -1,4 +1,4 @@
-FROM stackexchange/dnscontrol:4.15.6@sha256:86ca703d20ac3ed0dfc5ac9f43218f5fc1d60ea3295def89df916c0bc35fc970
+FROM stackexchange/dnscontrol:4.16.0@sha256:c6d71dfe62e2a2db11a172da2184c1947e1c486b9d37c46087c2094bb02b47c2
 
 LABEL repository="https://github.com/mshaugh/dnscontrol-action"
 LABEL maintainer="Max Shaughnessy <mshaugh@hey.com>"
